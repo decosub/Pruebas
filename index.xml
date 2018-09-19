@@ -9,6 +9,33 @@
 </item>
 
 <item>
+<title>[COLOR lime][B] Intro:[/B][/COLOR]</title>
+<urlsolve>https://www.youtube.com/watch?v=kBfna23B1U8</urlsolve>
+ <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
+ <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart> 
+ <info>[COLOR white]La casa de gran de Hermano en Directo ( Mediaset)...[/COLOR]</title></info>
+</item>
+
+<item>
+<title>[COLOR lime][B] Canciones Gran Hermano Vip (Septiembre):[/B][/COLOR]</title>
+<utube>F6ZxlIkM9b0</utube>
+ <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
+ <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart> 
+ <info>[COLOR white]La casa de gran de Hermano en Directo ( Mediaset)...[/COLOR]</title></info>
+</item>
+
+
+<item>
+<title>[COLOR lime][B] Buscador General Gran Hermano Vip :[/B][/COLOR]</title>
+<link>nolink</link>
+<jsonrpc>plugin://plugin.video.youtube/kodion/search/query/?q=gran+hermano+vip+2018&search_type=playlist</jsonrpc>
+ <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
+ <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart> 
+ <info>[COLOR white]La casa de gran de Hermano en Directo ( Mediaset)...[/COLOR]</title></info>
+</item>
+
+
+<item>
 <title>[COLOR lime][COLOR yellow][B] Gran Hemrano VIP 2018:[/B][/COLOR][B] Segunda Opcion de Codigo [/B][/COLOR]</title>
 <urlsolve>https://www.youtube.com/watch?v=F6ZxlIkM9b0</urlsolve>
  <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
