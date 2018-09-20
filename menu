@@ -1,15 +1,48 @@
+<item>
+<title>[B][COLOR black] SERIES PAPAYA [/COLOR][/B]</title>
+ <link>$doregex[makelist]</link>
+ 
+ <regex>
+<name>makelist</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold][makelist.param3][/COLOR] [/B]</title>
+<thumbnail>[makelist.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[makelist2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
+<page>http://www.seriespapaya.com/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+ <regex>
+<name>makelist2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] [makelist2.param4] -[COLOR yellow] [makelist2.param3] - [COLOR gold][makelist2.param2][/COLOR] [/B]</title>
+<thumbnail>[makelist2.param5]</thumbnail>
+<fanart></fanart>
+<urlsolve>[makelist2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
+<page>http://www.seriespapaya.com/[makelist.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail></thumbnail>
+</item>
 
 
 <item>
-<title>[B][COLOR gold] Gran Hermano VIP Capitulos  [/COLOR][/B]</title>
+<title>[B][COLOR gold] SERIES BLANCO  [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
 <regex>
 <name>makelist</name>  
 <listrepeat><![CDATA[  
 <title>[B][COLOR lime] - [COLOR white][makelist.param2][/COLOR] - [COLOR greenyellow][makelist.param3][/COLOR][/B]</title>
- <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
- <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart>
+ <thumbnail></thumbnail>
+ <fanart></fanart>
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[<a href="(.*?)".*itemprop="episodeNumber">(.*?)</span>(.*?)<]]></expres>
