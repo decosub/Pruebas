@@ -102,7 +102,7 @@
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[href="./peli.php\?id=(.*?)".*?src="(.*?)".*?inline;">(\d..).*?class="title">(.*?)<]]></expres>
-<page>http://www.wopelis.com/?gener=Terror%C3%B3n</page>
+<page>http://www.wopelis.com/?gener=Terror</page>
 <cookieJar></cookieJar>
 </regex>
   
@@ -151,7 +151,7 @@
 <link>$doregex[makelist3]</link>  
 ]]></listrepeat>
 <expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
-<page>https://www.inkapelis.com/terror/[makelist.param1]</page>
+<page>https://www.inkapelis.com/anio=&genero=terror&calidad=&idioma=&s=</page>
 <cookieJar></cookieJar>
 </regex>
  
@@ -185,7 +185,7 @@
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
-<page>http://pelisplus.co/terror/</page>
+<page>http://pelisplus.co/genero/terror/</page>
 <cookieJar></cookieJar>
 </regex>
  
