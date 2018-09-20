@@ -207,7 +207,7 @@
 </item>
 
 <item>
-<title>[B][COLOR deeppink] Por genero[/COLOR][/B]</title>
+<title>[B][COLOR red] Por genero[/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
 <regex>
@@ -218,7 +218,7 @@
 <fanart></fanart>
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
-<expres><![CDATA[<a href="https://www.inkapelis.com/genero/(.*?)".*?>(.*?) <]]></expres>
+<expres><![CDATA[<a href="https://www.inkapelis.com/genero/terro/(.*?)".*?>(.*?) <]]></expres>
 <page>https://www.inkapelis.com/</page>
 <cookieJar></cookieJar>
 </regex>
@@ -233,7 +233,7 @@
 <link>$doregex[makelist3]</link>  
 ]]></listrepeat>
 <expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
-<page>https://www.inkapelis.com/genero/[makelist.param1]</page>
+<page>https://www.inkapelis.com/genero/terror/[makelist.param1]</page>
 <cookieJar></cookieJar>
 </regex>
  
