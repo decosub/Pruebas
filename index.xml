@@ -136,7 +136,7 @@
 <fanart></fanart>
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
-<expres><![CDATA[<a href="https://www.inkapelis.com/genero/?anio=&genero=terror&calidad=&idioma=&s=(.*?)".*?>(.*?) <]]></expres>
+<expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
 <page>https://www.inkapelis.com/</page>
 <cookieJar></cookieJar>
 </regex>
@@ -151,7 +151,7 @@
 <link>$doregex[makelist3]</link>  
 ]]></listrepeat>
 <expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
-<page>https://www.inkapelis.com/anio=&genero=terror&calidad=&idioma=&s=</page>
+<page>https://www.inkapelis.com/[magyck2.param3]</page>
 <cookieJar></cookieJar>
 </regex>
  
