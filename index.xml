@@ -136,7 +136,7 @@
 <fanart></fanart>
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
-<expres><![CDATA[<a href="https://www.inkapelis.com/genero/(.*?)".*?>(.*?) <]]></expres>
+<expres><![CDATA[<a href="https://www.inkapelis.com/genero/?anio=&genero=terror&calidad=&idioma=&s=(.*?)".*?>(.*?) <]]></expres>
 <page>https://www.inkapelis.com/</page>
 <cookieJar></cookieJar>
 </regex>
@@ -173,7 +173,7 @@
 
 
  <item>
-<title>[B][COLOR white] Terror [/COLOR][/B]</title>
+<title>[B][COLOR red] Terror [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
  <regex>
