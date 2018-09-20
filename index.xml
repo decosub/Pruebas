@@ -137,7 +137,7 @@
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
-<page>https://www.inkapelis.com/</page>
+<page>https://www.inkapelis.com/?anio=&genero=terror&calidad=&idioma=&s=</page>
 <cookieJar></cookieJar>
 </regex>
  
@@ -173,7 +173,7 @@
 
 
  <item>
-<title>[B][COLOR red] Terror [/COLOR][/B]</title>
+<title>[B][COLOR white] Terror [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
  <regex>
