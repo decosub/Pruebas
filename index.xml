@@ -173,7 +173,7 @@
 
 
  <item>
-<title>[B][COLOR green] Terror [/COLOR][/B]</title>
+<title>[B][COLOR white] Terror [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
  <regex>
