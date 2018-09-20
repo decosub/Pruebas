@@ -87,3 +87,123 @@
  
 <thumbnail></thumbnail>
 </item>
+
+
+ <item>
+<title>[B][COLOR blue] Terror[/COLOR][/B]</title>
+ <link>$doregex[makelist]</link>
+ 
+<regex>
+<name>makelist</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR white][makelist.param4] - [COLOR gold] [[makelist.param3]][/COLOR][/B]</title>
+<thumbnail>[makelist.param2]</thumbnail>
+ <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart>
+<link>$doregex[makelist2]</link>  
+]]></listrepeat>
+<expres><![CDATA[href="./peli.php\?id=(.*?)".*?src="(.*?)".*?inline;">(\d..).*?class="title">(.*?)<]]></expres>
+<page>http://www.wopelis.com/?gener=Terror%C3%B3n</page>
+<cookieJar></cookieJar>
+</regex>
+  
+
+<regex>
+<name>makelist2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR greenyellow][makelist2.param1][/COLOR][/B]</title>
+<thumbnail>[makelist.param2]</thumbnail>
+ <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart>
+<urlsolve>[makelist2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[name="url" value="(.*?)"]]></expres>
+<page>http://www.wopelis.com/venlaces.php?npl=[makelist.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+  <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
+</item>
+
+
+
+<item>
+<title>[B][COLOR lime] Terror[/COLOR][/B]</title>
+ <link>$doregex[makelist]</link>
+ 
+<regex>
+<name>makelist</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR silver][makelist.param2] [/COLOR][/B]</title>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<link>$doregex[makelist2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="https://www.inkapelis.com/genero/(.*?)".*?>(.*?) <]]></expres>
+<page>https://www.inkapelis.com/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+<regex>
+<name>makelist2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR silver][makelist2.param2][/COLOR][/B]</title>
+<thumbnail>[makelist2.param1]</thumbnail>
+<fanart></fanart>
+<link>$doregex[makelist3]</link>  
+]]></listrepeat>
+<expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
+<page>https://www.inkapelis.com/terror/[makelist.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<regex>
+<name>makelist3</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR yellow][makelist3.param2] - [COLOR gold][makelist3.param3] - [COLOR yellow][makelist3.param4][/COLOR][/B]</title>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<urlsolve>[makelist3.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[<td><a href="(.*?)".*?</span>(.*?)<.*?title="(.*?)".*?<td>(.*?)</td><td>(.*?)<]]></expres>
+<page>https://www.inkapelis.com/[makelist2.param3]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail></thumbnail>
+</item>
+
+
+ <item>
+<title>[B][COLOR green] Terror [/COLOR][/B]</title>
+ <link>$doregex[makelist]</link>
+ 
+ <regex>
+<name>makelist</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold][makelist.param3][/COLOR] [/B]</title>
+<thumbnail>[makelist.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[makelist2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
+<page>http://pelisplus.co/terror/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+ <regex>
+<name>makelist2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] [makelist2.param4] -[COLOR yellow] [makelist2.param3] - [COLOR gold][makelist2.param2][/COLOR] [/B]</title>
+<thumbnail>[makelist2.param5]</thumbnail>
+<fanart></fanart>
+<urlsolve>[makelist2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
+<page>http://pelisplus.co/[makelist.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail></thumbnail>
+</item>
+
+
