@@ -11,7 +11,7 @@
 <link>$doregex[makelist2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
-<page>http://www.seriespapaya.com/</page>
+<page>http://www.seriespapaya.com/lista-series-populares/</page>
 <cookieJar></cookieJar>
 </regex>
  
@@ -25,7 +25,7 @@
 <urlsolve>[makelist2.param1]</urlsolve>  
 ]]></listrepeat>
 <expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
-<page>http://www.seriespapaya.com/[makelist.param1]</page>
+<page>http://www.seriespapaya.com/lista-series-populares/[makelist.param1]</page>
 <cookieJar></cookieJar>
 </regex>
  
