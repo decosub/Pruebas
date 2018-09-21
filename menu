@@ -1398,10 +1398,6 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <page></page>
 </regex>
 
-</item>
-
-
-<item>
 
 <channel>
   <name>DOCUMANIATV</name>
@@ -1411,8 +1407,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
   <info>Regex DocumaniaTv by joheos11</info>
 </channel>
 
-</item>
-<item>
+
 <channel>
   <name>EL RINCON DEL LOLO</name>
   <thumbnail>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/icon.png?raw=true</thumbnail>
@@ -1420,9 +1415,9 @@ def GetLSProData(page_data,Cookie_Jar,m):
   <externallink>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/Menu/Baselolo.xml</externallink>
   <info>Autor: Manuel (España). Colabora junto a Diego de DJLIPTV</info>
 </channel>
-</item>
 
-<item>
+
+
 <channel>
   <name>KODISPAINTV</name>
   <thumbnail>https://github.com/joheos11/repository.kodispain/blob/master/plugin.video.kodispaintv/icon.png?raw=true</thumbnail>
@@ -1430,4 +1425,4 @@ def GetLSProData(page_data,Cookie_Jar,m):
   <externallink>https://raw.githubusercontent.com/joheos11/hello-world/master/Nueva%20carpeta/master.xml</externallink>
   <info>Autor: @joheos11 Otros: Imagen @kodispain</info>
 </channel>
-</item>
+
