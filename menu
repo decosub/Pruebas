@@ -414,9 +414,6 @@ def GetLSProData(page_data,Cookie_Jar,m):
 </regex>
 <thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
 </item>
-© 2018 GitHub, Inc.
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet href="hide-it.xsl" type="text/xsl"?>
 
 
 	<item>
@@ -456,7 +453,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
 		<thumbnail>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouThumbnail.png?raw=true</thumbnail>
 		<fanart>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouFanart.png?raw=true</fanart>
 	</item>
-© 2018 GitHub, Inc.
+
 <item>
 <title>EXPEDIENTE X COMPLETA</title>
 <link>$doregex[makelist]</link>
@@ -522,6 +519,8 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <X-Req>XMLHttpRequest</X-Req>
 <cookieJar></cookieJar>
 </regex>
+</tem>
+<item>
 <regex>
 <name>tok</name>
 <expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
@@ -560,6 +559,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <X-Req>XMLHttpRequest</X-Req>
 <cookieJar></cookieJar>
 </regex>
+
 <regex>
 <name>tok</name>
 <expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
@@ -953,21 +953,6 @@ class="item">([^"<]+).*?div class="post-header"([^"<]+).*?a href="([^"<]+).*?">(
 
  </item>
 
- </item>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <item>
  
@@ -1028,9 +1013,6 @@ br([^"<]+).*?a href="([^"<]+).*?>([^"<]+).*?
 <expres>height="([^"<]+).*?src="([^"<]+).*?</expres>
 <page>[makelist2.param2]</page>
 </regex>
-
- </item>
-
 
 <thumbnail>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</thumbnail>
 <fanart>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</fanart>
@@ -1331,20 +1313,8 @@ article class="TPost.*?C">([^a']+).*?a href="([^"']+).*?([^"']+).*?
 <expres>href="([^"]+).*?</expres>
 <page>[makelist2.param1]</page>
 </regex>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  </item>
  
- </item>
 
 <item>
  
@@ -1427,9 +1397,9 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <page></page>
 </regex>
 
+</item>
 
-
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<item>
 
 <channels>
 
@@ -1577,3 +1547,4 @@ def GetLSProData(page_data,Cookie_Jar,m):
 </channel>
 
 </channels>
+</item>
