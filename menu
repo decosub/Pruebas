@@ -33,6 +33,7 @@
 </regex>
   <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
 </item>
+
   <item>
 <title>[B][COLOR black] Terror [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
@@ -212,6 +213,8 @@
 <thumbnail>https://lh6.googleusercontent.com/-PRXvh5sIJZs/AAAAAAAAAAI/AAAAAAAAADU/ycYKKh9QIx0/il/photo.jpg</thumbnail>
 </item>
 
+
+
 <item>
 <title>[COLOR skyblue]BUSCAR[/COLOR]</title>
 <link>$doregex[makelist]</link> 
@@ -256,6 +259,8 @@ def GetLSProData(page_data,Cookie_Jar,m):
 </regex>
 <thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
 </item>
+
+
  <item>
 <title>LOS MEJORES DOCUMENTALES</title>
 <link>$doregex[makelist2]</link> 
@@ -385,10 +390,6 @@ def GetLSProData(page_data,Cookie_Jar,m):
 <expres><![CDATA[li.*?href="(http:\/\/www.documaniatv.com\/documentales.*?)".*?">(.*?)<]]></expres>
 <page>http://www.documaniatv.com/topvideos.html</page>
 </regex>
-
-
-
-
 
 <regex>
 <name>makelist</name>
