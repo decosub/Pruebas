@@ -1400,40 +1400,8 @@ def GetLSProData(page_data,Cookie_Jar,m):
 
 </item>
 
-<item>
 
-<channels>
 
-<channels_info>
-  <title>Pruaddons</title>
-  <description>Lista privada de addons con base LSP</description>
-  <thumbnail>https://s1.postimg.org/2n27ynorz3/kodiaddons.jpg</thumbnail>
-  <fanart>https://s1.postimg.org/10kqrjy2gf/fanart-197_orig.jpg</fanart>
-</channels_info>
-
-<channel>
-  <name>ADRYANLIST</name>
-  <thumbnail>https://raw.githubusercontent.com/adrianhn/adryanlist/master/adryan/img/adryanlist.png</thumbnail>
-  <fanart>https://raw.githubusercontent.com/adrianhn/adryanlist/master/adryan/img/fanart.jpg</fanart>
-  <externallink>https://raw.githubusercontent.com/adrianhn/adryanlist/master/list.xml</externallink>
-  <info>Autor: Adryan (Mexico). Addon de adrian todo en uno</info>
-</channel>
-
-<channel>
-  <name>DIABLO</name>
-  <thumbnail>http://www.fdileague.com/images/EB/logo.png</thumbnail>
-  <fanart>https://wowcenter.pl/Upload/Avatars/7369.jpg</fanart>
-  <externallink>https://raw.githubusercontent.com/lokiyotnt69/UFC/master/undertaker.xml</externallink>
-  <info>Autor: Juan (España). Otros addons: JHG y JOKER</info>
-</channel>
-
-<channel>
-  <name>DJLIPTV</name>
-  <thumbnail>http://i.imgur.com/xFd7eOc.jpg</thumbnail>
-  <fanart>http://i.imgur.com/xFd7eOc.jpg</fanart>
-  <externallink>http://bit.ly/DJLIPTVP</externallink>
-  <info>Autor: Diego (Argentina). Addon incluido en EL RINCON DEL LOLO</info>
-</channel>
 
 <channel>
   <name>DOCUMANIATV</name>
@@ -1451,29 +1419,7 @@ def GetLSProData(page_data,Cookie_Jar,m):
   <info>Autor: Manuel (España). Colabora junto a Diego de DJLIPTV</info>
 </channel>
 
-<channel>
-  <name>JHG.MASTER.3.0</name>
-  <thumbnail>https://github.com/lokiyotnt69/REPOSITORIOJHGMASTER/blob/master/plugin.video.J.H.G.MASTER/icon.png?raw=true</thumbnail>
-  <fanart>https://github.com/lokiyotnt69/REPOSITORIOJHGMASTER/blob/master/plugin.video.J.H.G.MASTER/fanart.jpg?raw=true</fanart>
-  <externallink>https://raw.githubusercontent.com/lokiyotnt69/JHG.MASTER.3.0/master/BASEJUANH.xml</externallink>
-  <info>Autor: Juan (España). Otros addons: JOKER y DIABLO</info>
-</channel>
 
-<channel>
-  <name>JUNIOR</name>
-  <thumbnail>https://s1.postimg.org/4uic4zxn57/icon.png</thumbnail>
-  <fanart>https://s1.postimg.org/51lk0fj5ff/fanart.jpg</fanart>
-  <externallink>https://dl.dropbox.com/s/2xvpr4fh4s9b4fe/principal.xml</externallink>
-  <info>Autor: Neoandaluz</info>
-</channel>
-
-<channel>
-  <name>KARAOKE</name>
-  <thumbnail>https://s26.postimg.org/5sqzqjqxx/icon.png</thumbnail>
-  <fanart>https://s26.postimg.org/i63txggmd/fanart.jpg</fanart>
-  <externallink>https://raw.githubusercontent.com/Compartida/Karaoke/master/adiosindex.xml</externallink>
-  <info>Autor: Boni AKA ESTEST (España). Otros addons: PLANETA</info>
-</channel>
 
 <channel>
   <name>KODISPAINTV</name>
@@ -1482,70 +1428,3 @@ def GetLSProData(page_data,Cookie_Jar,m):
   <externallink>https://raw.githubusercontent.com/joheos11/hello-world/master/Nueva%20carpeta/master.xml</externallink>
   <info>Autor: @joheos11 Otros: Imagen @kodispain</info>
 </channel>
-
-<channel>
-  <name>LFP</name>
-  <thumbnail>https://s26.postimg.org/8pv3yr0h5/icon.png</thumbnail>
-  <fanart>http://www.gamingesports.com/wp-content/uploads/2016/07/maxresdefault-4.jpg</fanart>
-  <externallink>https://pastebin.com/raw/Jvw2GNxY</externallink>
-  <info></info>
-</channel>
-
-<channel>
-  <name>LISTAS M3U</name>
-  <thumbnail>https://s1.postimg.org/4q5v8jo5z3/m3u-icon.png</thumbnail>
-  <fanart>https://s1.postimg.org/6w3vb4bs8v/m3u_fanart.jpg</fanart>
-  <externallink>https://pastebin.com/raw/430jrTFa</externallink>
-  <info>Listas variadas de m3u</info>
-</channel>
-
-<channel>
-  <name>PELICULAS</name>
-  <externallink>https://pastebin.com/raw/mkMb5yB7</externallink>
-  <thumbnail>https://s20.postimg.org/ftpios9x9/boton_peliculas.png</thumbnail>
-  <fanart>https://s33.postimg.org/bfdhwtvgv/peliculas-2016.jpg</fanart>
-</channel>
-
-<channel>
-  <name>PLANETA</name>
-  <thumbnail>https://s26.postimg.org/v6fktw36t/icon.png</thumbnail>
-  <fanart>https://s26.postimg.org/wk77p72g5/fanart.jpg</fanart>
-  <externallink>https://raw.githubusercontent.com/Maniac2017/Planeta/master/planeta.xml</externallink>
-  <!-- <externallink>https://raw.githubusercontent.com/Compartida/documentales/master/index.xml</externallink> -->
-  <info>Autor: Antes Catoal, Nereo y ESTEST, luego solo Catoal y Nereo (España). Otros addons: KARAOKE (ESTEST)</info>
-</channel>
-
-<channel>
-  <name>PURO HD</name>
-  <thumbnail>https://s33.postimg.org/qe2caenx7/icon.png</thumbnail>
-  <fanart>https://s33.postimg.org/sve3ho03v/fanart.jpg</fanart>
-  <externallink>http://178.33.205.93/puro-hd/index.xml</externallink>
-  <info></info>
-</channel>
-
-<channel>
-  <name>TV CHOPO</name>
-  <thumbnail>http://4.bp.blogspot.com/-Ts6yfxXmc6w/WcfzE6JX4xI/AAAAAAAAEgA/GssOAZyPARg6dc5zRKfFuWc0XwxY_2lQACK4BGAYYCw/s1600/photo_2017-09-24_18-36u.png</thumbnail>
-  <fanart>https://s26.postimg.org/s0h6yggf9/fanart.jpg</fanart>
-  <externallink>https://raw.githubusercontent.com/elchocolate/tvchocotv/master/new%201.xml</externallink>
-  <info>Autor: Torete. Addon AKA TV CHOCO </info>
-</channel>
-
-<channel>
-  <name>Wet4U</name>
-  <thumbnail>https://github.com/Maniac2017/repository.Maniac/blob/master/plugin.video.wet4u/icon.png?raw=true</thumbnail>
-  <fanart>https://github.com/Maniac2017/repository.Maniac/blob/master/plugin.video.wet4u/fanart.jpg?raw=true</fanart>
-  <externallink>https://raw.githubusercontent.com/poluxw4u/Wet4u/master/Index.xml</externallink>
-  <info>Autor: Polux AKA Anabel </info>
-</channel>
-
-<channel>
-  <name>YO AMO A JESUS</name>
-  <thumbnail>https://2.bp.blogspot.com/-yrhVrphh2dc/WMb_s-uXv8I/AAAAAAAAAB4/Gv8m6GJRLzMYlOErDPtb7YbwfCQi9pwgQCLcB/s1600/icono.png</thumbnail>
-  <fanart>https://1.bp.blogspot.com/-m4E6A6Akh4E/WVGNgyA3LSI/AAAAAAAAA6o/AJNd3vtFX14aZDnwZWYzacglzXKECn8bwCLcBGAs/s1600/FONDO%2Byo%2Bammo%2Ba%2Bjesus.jpg</fanart>
-  <externallink>http://qbahumor.blogspot.com.es/p/addon-yo-amo-jesus.html</externallink>
-  <info>Addon religioso para Pachy y Cia</info>
-</channel>
-
-</channels>
-</item>
