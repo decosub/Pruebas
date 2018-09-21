@@ -1,72 +1,3 @@
-<item>
-<title>[B][COLOR black] SERIES PAPAYA [/COLOR][/B]</title>
-<title>[B][COLOR orange]  +   [COLOR white] SeriesDanko[/COLOR][I][COLOR royalblue] - Por letra[/I][/COLOR][/B]</title>
- <link>$doregex[makelist]</link>
- 
- <regex>
-<name>makelist</name>  
-<listrepeat><![CDATA[  
-<title>[B][COLOR gold][makelist.param3][/COLOR] [/B]</title>
-<thumbnail>[makelist.param2]</thumbnail>
-<fanart></fanart>
-<link>$doregex[makelist2]</link>  
-]]></listrepeat>
-<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
-<page>http://www.seriespapaya.com/lista-series-populares/</page>
-<cookieJar></cookieJar>
-</regex>
- 
- 
- <regex>
-<name>makelist2</name>  
-<listrepeat><![CDATA[  
-<title>[B][COLOR gold] [makelist2.param4] -[COLOR yellow] [makelist2.param3] - [COLOR gold][makelist2.param2][/COLOR] [/B]</title>
-<thumbnail>[makelist2.param5]</thumbnail>
-<fanart></fanart>
-<urlsolve>[makelist2.param1]</urlsolve>  
-]]></listrepeat>
-<expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
-<page>http://www.seriespapaya.com/lista-series-populares/[makelist.param1]</page>
-<cookieJar></cookieJar>
-</regex>
- 
-<thumbnail></thumbnail>
-</item>
- <item>
-<title>[B][COLOR gold] SERIES BLANCO  [/COLOR][/B]</title>
- <link>$doregex[makelist]</link>
- 
-<regex>
-<name>makelist</name>  
-<listrepeat><![CDATA[  
-<title>[B][COLOR lime] - [COLOR white][makelist.param2][/COLOR] - [COLOR greenyellow][makelist.param3][/COLOR][/B]</title>
- <thumbnail></thumbnail>
- <fanart></fanart>
-<link>$doregex[makelist2]</link>  
-]]></listrepeat>
-<expres><![CDATA[<a href="(.*?)".*itemprop="episodeNumber">(.*?)</span>(.*?)<]]></expres>
-<page>https://seriesblanco.org/capitulos/gran-hermano-vip-2018//</page>
-<cookieJar></cookieJar>
-</regex>
- 
- 
- 
-<regex>
-  <name>makelist2</name>  
-  <listrepeat><![CDATA[  
-<title>[B][COLOR lime] - [COLOR white][makelist2.param1][/COLOR][/B]</title>
- <thumbnail>https://i.imgur.com/2Giz6Ob.jpg</thumbnail>
- <fanart>https://i.imgur.com/2Giz6Ob.jpg</fanart>
-<urlsolve>[makelist2.param1]</urlsolve>  
-]]></listrepeat>
-<expres><![CDATA[<a class="open-link" data-enlace="(.*?)"]]></expres>
-<page>[makelist.param1]</page>
-<cookieJar></cookieJar>
-</regex>
- 
-<title>[B][COLOR gold][makelist.param2][/COLOR][/B]</title>
-<thumbnail></thumbnail>
-</item>
   <item>
 <title>[B][COLOR blue] Terror[/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
@@ -280,3 +211,1369 @@
 
 <thumbnail>https://lh6.googleusercontent.com/-PRXvh5sIJZs/AAAAAAAAAAI/AAAAAAAAADU/ycYKKh9QIx0/il/photo.jpg</thumbnail>
 </item>
+
+<item>
+<title>[COLOR skyblue]BUSCAR[/COLOR]</title>
+<link>$doregex[makelist]</link> 
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist.param2] [/COLOR]   </title>
+<link>http:$doregex[link]</link>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?title="(.*?)"]]></expres>
+<page>http://www.documaniatv.com/search.php?keywords=$doregex[search]</page>
+</regex>
+
+<regex>
+<name>search</name>
+<expres><![CDATA[#$pyFunction
+import xbmc
+import xbmcaddon
+import xbmcgui
+def GetLSProData(page_data,Cookie_Jar,m):
+    dialog = xbmcgui.Dialog()
+    d = dialog.input('Buscar Documental: ejemplo: Planeta Azul', type=xbmcgui.INPUT_ALPHANUM).replace(" ", "+")
+    return d
+]]></expres>
+<page></page>
+<cookieJar></cookieJar>
+</regex>
+
+
+<regex>
+<name>link</name>
+<expres>file:\s\"(.*?)"</expres>
+<page>http://cnubis.com/plugins/mediaplayer/embeder/_embed2.php?u=$doregex[id2]</page>
+</regex>
+<regex>
+<name>id2</name>
+<expres>embed2\.php\?u=(.*?)"</expres>
+<page>[makelist.param1]</page>
+</regex>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+</item>
+ <item>
+<title>LOS MEJORES DOCUMENTALES</title>
+<link>$doregex[makelist2]</link> 
+
+
+<regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist2.param2] [/COLOR]   </title>
+<link>$doregex[makelist]</link> 
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?white\;\">(.*?)<]]></expres>
+<page>http://www.documaniatv.com/top-series-documentales.html</page>
+</regex>
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist.param2] [/COLOR]   </title>
+<link>http:$doregex[link]</link>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?title="(.*?)"]]></expres>
+<page>[makelist2.param1]</page>
+</regex>
+
+<regex>
+<name>link</name>
+<expres>file:\s\"(.*?)"</expres>
+<page>http://cnubis.com/plugins/mediaplayer/embeder/_embed2.php?u=$doregex[id2]</page>
+</regex>
+<regex>
+<name>id2</name>
+<expres>embed2\.php\?u=(.*?)"</expres>
+<page>[makelist.param1]</page>
+</regex>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+</item>
+	  
+  
+
+ 
+<item>
+<title>Mas Recientes</title>
+<link>$doregex[makelist]</link> 
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist.param2] [/COLOR]   </title>
+<link>http:$doregex[link]</link>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?title="(.*?)"]]></expres>
+<page>http://www.documaniatv.com/newvideos.html</page>
+</regex>
+
+<regex>
+<name>link</name>
+<expres>file:\s\"(.*?)"</expres>
+<page>http://cnubis.com/plugins/mediaplayer/embeder/_embed2.php?u=$doregex[id2]</page>
+</regex>
+<regex>
+<name>id2</name>
+<expres>embed2\.php\?u=(.*?)"</expres>
+<page>[makelist.param1]</page>
+</regex>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+</item>
+
+<item>
+<title>Mas Vistos</title>
+<link>$doregex[makelist]</link> 
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist.param2] [/COLOR]   </title>
+<link>http:$doregex[link]</link>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?title="(.*?)"]]></expres>
+<page>http://www.documaniatv.com/topvideos.html</page>
+</regex>
+
+<regex>
+<name>link</name>
+<expres>file:\s\"(.*?)"</expres>
+<page>http://cnubis.com/plugins/mediaplayer/embeder/_embed2.php?u=$doregex[id2]</page>
+</regex>
+<regex>
+<name>id2</name>
+<expres>embed2\.php\?u=(.*?)"</expres>
+<page>[makelist.param1]</page>
+</regex>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+</item>
+
+
+
+
+
+
+
+
+
+ 
+<item>
+<title>Por Genero</title>
+<link>$doregex[makelist2]</link> 
+
+
+
+<regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist2.param2] [/COLOR]   </title>
+<link>$doregex[makelist]</link> 
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[li.*?href="(http:\/\/www.documaniatv.com\/documentales.*?)".*?">(.*?)<]]></expres>
+<page>http://www.documaniatv.com/topvideos.html</page>
+</regex>
+
+
+
+
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetViewMode>55</SetViewMode>
+<title>[COLOR white][makelist.param2] [/COLOR]   </title>
+<link>http:$doregex[link]</link>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+]]></listrepeat>
+<expres><![CDATA[h3.*?href="(.*?)".*?title="(.*?)"]]></expres>
+<page>[makelist2.param1]</page>
+</regex>
+
+<regex>
+<name>link</name>
+<expres>file:\s\"(.*?)"</expres>
+<page>http://cnubis.com/plugins/mediaplayer/embeder/_embed2.php?u=$doregex[id2]</page>
+</regex>
+<regex>
+<name>id2</name>
+<expres>embed2\.php\?u=(.*?)"</expres>
+<page>[makelist.param1]</page>
+</regex>
+<thumbnail>http://adryanlist.org/adryan/img/documental.png</thumbnail>
+</item>
+© 2018 GitHub, Inc.
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet href="hide-it.xsl" type="text/xsl"?>
+
+
+	<item>
+		<title>[COLOR white][B]+[/B][/COLOR] [COLOR dodgerblue]CINE[/COLOR] [COLOR skyblue]TERROR[/COLOR]</title>
+		<link>$doregex[makelist]</link>
+		<regex>
+			<name>makelist</name>
+			<listrepeat><![CDATA[
+			<title>[makelist.param3]</title>
+			<link>$doregex[getUrl]</link>
+			<thumbnail>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouThumbnail.png?raw=true</thumbnail>
+			<fanart>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouFanart.png?raw=true</fanart>
+			]]></listrepeat>
+			<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+			<page>http://diskokosmiko.mx/Jeviathan/cine-terror-23445/list,1,100</page>
+			<cookieJar></cookieJar>
+		</regex>
+		<regex>
+			<name>getUrl</name>
+			<expres>DownloadUrl":"([^"]+)<expres>
+			<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+			<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+			<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+			<connection>keep-alive</connection>
+			<accept>*/*</accept>
+			<X-Req>XMLHttpRequest</X-Req>
+			<cookieJar></cookieJar>
+		</regex>
+		<regex>
+			<name>tok</name>
+			<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+			<page>http://diskokosmiko.mx/[makelist.param2]</page>
+			<referer>http://diskokosmiko.mx/Jeviathan/cine-terror-23445/list,1,100</referer>
+			<connection>keep-alive</connection>
+			<cookieJar></cookieJar>
+		</regex>
+		<thumbnail>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouThumbnail.png?raw=true</thumbnail>
+		<fanart>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/LouFanart.png?raw=true</fanart>
+	</item>
+© 2018 GitHub, Inc.
+<item>
+<title>EXPEDIENTE X COMPLETA</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://sous-titres.icdn.pro/media/poster/saison-1/855-the-x-files-w185.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://sous-titres.icdn.pro/media/poster/saison-1/855-the-x-files-w185.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/chinchetas/expediente-x-espanol-todas-temp-66235/list,1,100</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>http://diskokosmiko.mx/naredo/cimarron-strip-serie-54229
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/chinchetas/expediente-x-espanol-todas-temp-66235/list,1,100</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://sous-titres.icdn.pro/media/poster/saison-1/855-the-x-files-w185.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://sous-titres.icdn.pro/media/poster/saison-1/855-the-x-files-w185.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ <item>
+<title>SOBRENATURAL</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnailhttp://seriesadicto.com/img/series/supernatural.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://seriesadicto.com/img/series/supernatural.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/chinchetas/sobrenatural-todas-temp-castellano-39114/list,1,15</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/chinchetas/sobrenatural-todas-temp-castellano-39114/list,1,15</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://seriesadicto.com/img/series/supernatural.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://seriesadicto.com/img/series/supernatural.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+<item>
+<title>V LOS VISITANTES</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://sim1.subirimagenes.net/img/2014/09/28/140928035633347763.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://sim1.subirimagenes.net/img/2014/09/28/140928035633347763.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/lokario1/v-los-visitantes-12047/list,1,2</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/lokario1/v-los-visitantes-12047/list,1,2</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://sim1.subirimagenes.net/img/2014/09/28/140928035633347763.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://sim1.subirimagenes.net/img/2014/09/28/140928035633347763.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ç<item>
+<title>THE WALKING DEAD</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://media.mcm.fr/article-3151119-fb/the-walking-dead-saison-6-episode-10-episode.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://media.mcm.fr/article-3151119-fb/the-walking-dead-saison-6-episode-10-episode.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/fraguas-fraguas/the-walking-dead-22515/list,1,5</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>http://diskokosmiko.mx/naredo/cimarron-strip-serie-54229
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/fraguas-fraguas/the-walking-dead-22515/list,1,5</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://media.mcm.fr/article-3151119-fb/the-walking-dead-saison-6-episode-10-episode.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://media.mcm.fr/article-3151119-fb/the-walking-dead-saison-6-episode-10-episode.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ <item>
+<title>STARGATE SG1</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://1.bp.blogspot.com/-8O34aly0zCQ/VGjgcINKWKI/AAAAAAAAABw/Xh1cQwYNVmw/s1600/Stargate-SG1_029.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://1.bp.blogspot.com/-8O34aly0zCQ/VGjgcINKWKI/AAAAAAAAABw/Xh1cQwYNVmw/s1600/Stargate-SG1_029.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/titotv/stargate-sg1-atlantis-universe-en-espanol-1203/list,1,15</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/titotv/stargate-sg1-atlantis-universe-en-espanol-1203/list,1,15</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://1.bp.blogspot.com/-8O34aly0zCQ/VGjgcINKWKI/AAAAAAAAABw/Xh1cQwYNVmw/s1600/Stargate-SG1_029.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://1.bp.blogspot.com/-8O34aly0zCQ/VGjgcINKWKI/AAAAAAAAABw/Xh1cQwYNVmw/s1600/Stargate-SG1_029.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ <item>
+<title>LOS 100</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://www.gstatic.com/tv/thumb/tvbanners/13516352/p13516352_b_v8_aa.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://www.gstatic.com/tv/thumb/tvbanners/13516352/p13516352_b_v8_aa.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/garroteca/los-100-49103/list,1,3</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/garroteca/los-100-49103/list,1,3</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://www.gstatic.com/tv/thumb/tvbanners/13516352/p13516352_b_v8_aa.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://www.gstatic.com/tv/thumb/tvbanners/13516352/p13516352_b_v8_aa.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ 
+ <item>
+<title>MILLENNIUM</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>https://pics.filmaffinity.com/millennium_tv_series-676235568-large.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>https://pics.filmaffinity.com/millennium_tv_series-676235568-large.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/garroteca/milenium-61748/list,1,3</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/garroteca/milenium-61748/list,1,3</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>https://pics.filmaffinity.com/millennium_tv_series-676235568-large.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>https://pics.filmaffinity.com/millennium_tv_series-676235568-large.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ <item>
+<title>DOCTOR WHO</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://www.torrentscompletos.com/wp-content/uploads/2017/03/fdgsdA.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://www.torrentscompletos.com/wp-content/uploads/2017/03/fdgsdA.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/garroteca/doctor-who-53061/list,1,5</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>http://diskokosmiko.mx/naredo/cimarron-strip-serie-54229
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/garroteca/doctor-who-53061/list,1,5</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://www.torrentscompletos.com/wp-content/uploads/2017/03/fdgsdA.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://www.torrentscompletos.com/wp-content/uploads/2017/03/fdgsdA.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ <item>
+<title>PSYCH</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://www.gstatic.com/tv/thumb/tvbanners/10409051/p10409051_b_v8_aa.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://www.gstatic.com/tv/thumb/tvbanners/10409051/p10409051_b_v8_aa.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/naredo/psych-serie-72375/list,1,5</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/naredo/psych-serie-72375/list,1,5</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://www.gstatic.com/tv/thumb/tvbanners/10409051/p10409051_b_v8_aa.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://www.gstatic.com/tv/thumb/tvbanners/10409051/p10409051_b_v8_aa.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ 
+ 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ 
+<item>
+<title>HISTORIAS PARA NO DORMIR</title>
+<link>$doregex[makelist]</link>
+ 
+<regex>
+  <name>makelist</name>
+  <listrepeat><![CDATA[
+        <title>[COLOR white][makelist.param3][/COLOR]</title>
+        <link>$doregex[getUrl]</link>
+        <thumbnail>http://fotos02.lne.es/mmp/2016/02/05/646x260/historias-para-no-dormir-2016-05.jpg</thumbnail> <!-- aqui va la portada -->
+        <fanart>http://fotos02.lne.es/mmp/2016/02/05/646x260/historias-para-no-dormir-2016-05.jpg</fanart> <!-- aqui va el fondo -->
+        ]]></listrepeat>
+<expres><![CDATA[href="\/.*,(.*?),list.*\n.*\n.*\n.*href="\/([^"]*)".*?>(.*?)<]]></expres>
+<page>http://diskokosmiko.mx/naredo/historias-para-no-dormir-72295/list,1,2</page> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>DownloadUrl":"([^"]+)<expres>
+<page>http://diskokosmiko.mx/action/DownloadFile?location=fi&amp;f=[makelist.param1]</page>
+<rawpost>fileId=[makelist.param1]&amp;__RequestVerificationToken=$doregex[tok]</rawpost>
+<referer>http://diskokosmiko.mx/[makelist.param2]</referer>
+<connection>keep-alive</connection>
+<accept>*/*</accept>
+<X-Req>XMLHttpRequest</X-Req>
+<cookieJar></cookieJar>
+</regex>
+<regex>
+<name>tok</name>
+<expres>DownloadFile.*RequestVerificationToken.*?value="([^"]+)<expres>
+<page>http://diskokosmiko.mx/[makelist.param2]</page>
+<referer>http://diskokosmiko.mx/naredo/historias-para-no-dormir-72295/list,1,2</referer> <!-- cambial este link por el de la pagina donde estan las peliculas o series si son varias paginas ir hasta el final y copiar el link completeo termina con list, 1,x --->
+<connection>keep-alive</connection>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>http://fotos02.lne.es/mmp/2016/02/05/646x260/historias-para-no-dormir-2016-05.jpg</thumbnail> <!-- aqui va la portada -->
+<fanart>http://fotos02.lne.es/mmp/2016/02/05/646x260/historias-para-no-dormir-2016-05.jpg</fanart> <!-- aqui va el fondo -->
+</item>
+ 
+ 
+<item>
+ 
+<title>[COLOR aquamarine]series blanco bueno</title>
+ <link>$doregex[makelist3]</link>
+
+br([^"<]+).*?a href="([^"<]+).*?>([^"<]+).*?
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue]-[/COLOR][COLOR yellow][makelist3.param5][/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>left:15px'>([^"<]+).*?a href='([^"'<]+).*?'>([^"<]+).*?src='([^"'<]+).*?title='([^"'<]+).*?</expres>
+<page>https://seriesblanco.com/listado/</page>
+</regex>
+
+
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue]-[/COLOR][COLOR yellow][makelist2.param3][/COLOR]</title>
+<link>$doregex[makelist4]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>class='table-hover'>([^a"]+).*?a href='([^'"]+).*?episodeNumber'>([^'<"]+).*?</expres>
+<page>https://seriesblanco.com/[makelist3.param2]</page>
+</regex>
+
+
+ <regex>
+<name>makelist4</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue]-[/COLOR][COLOR yellow][makelist4.param2][/COLOR]</title>
+<urlsolve>[makelist4.param2]</urlsolve>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>class="grid_content sno">([^e'"]+).*?ef="([^'"]+).*?</expres>
+<page>https://seriesblanco.com/[makelist2.param2]</page>
+</regex>
+
+ </item>
+
+
+
+
+<item>
+ 
+<title>[COLOR aquamarine]docu bueno</title>
+ <link>$doregex[makelist3]</link>
+
+br([^"<]+).*?a href="([^"<]+).*?>([^"<]+).*?
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue]-[/COLOR][COLOR yellow][makelist3.param3][/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>br />([^"<]+).*?a href='([^"']+).*?'>([^"<']+).*?</expres>
+<page>https://www.documentales-online.com/series-temas/</page>
+</regex>
+
+
+
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist2.param3]-[/COLOR]</title>
+<link>$doregex[makelist1]</link>
+<thumbnail>[makelist2.param13]</thumbnail>
+<fanart>[makelist2.param13]</fanart>
+]]></listrepeat>
+<expres>h2>([<^"]+).*?a href="([^"]+).*?>([^<"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^<"]+).*?([^<"]+).*?([^<"]+).*?([^<"]+).*?</expres>
+<page>https://www.documentales-online.com[makelist3.param2]/</page>
+</regex>
+class="item">([^"<]+).*?div class="post-header"([^"<]+).*?a href="([^"<]+).*?">([^"<]+).*?
+
+
+  <regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist2.param3][/COLOR]--[COLOR red]ver aqui  [/COLOR]</title>
+<urlsolve>[makelist1.param2]</urlsolve>
+<thumbnail>[makelist2.param13]</thumbnail>
+<fanart>[makelist2.param13]</fanart>
+]]></listrepeat>
+<expres>height="([^"<]+).*?src="([^"<]+).*?</expres>
+<page>[makelist2.param2]</page>
+</regex>
+
+ </item>
+
+ </item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item>
+ 
+<title>[COLOR aquamarine]CHOPO</title>
+ <link>$doregex[makelist3]</link>
+
+br([^"<]+).*?a href="([^"<]+).*?>([^"<]+).*?
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue]-[/COLOR][COLOR yellow][makelist3.param3][/COLOR]</title>
+<link>$doregex[makelist4]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>br([^"<]+).*?a href="([^"<]+).*?>([^"<]+).*?</expres>
+<page>https://www.documentales-online.com/categorias/</page>
+</regex>
+
+  <regex>
+<name>makelist4</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist4.param1]-[/COLOR][COLOR white] pagina [/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail>https://www.inkapelis.com/wp-content/uploads/2016/07/11188189_681516281954468_6867444584986258414_n.png</thumbnail>
+<fanart>https://www.inkapelis.com/wp-content/uploads/2016/07/11188189_681516281954468_6867444584986258414_n.png</fanart>
+]]></listrepeat>
+<expres>pagina "([^"]+)".*?</expres>
+<page>https://pastebin.com/raw/uaBq2Ucm</page>
+</regex>
+
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist2.param3]-[/COLOR]</title>
+<link>$doregex[makelist1]</link>
+<thumbnail>[makelist2.param13]</thumbnail>
+<fanart>[makelist2.param13]</fanart>
+]]></listrepeat>
+<expres>h2>([<^"]+).*?a href="([^"]+).*?>([^<"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^"]+).*?([^<"]+).*?([^<"]+).*?([^<"]+).*?([^<"]+).*?</expres>
+<page>https://www.documentales-online.com/categorias/[makelist3.param3]/page/[makelist4.param1]</page>
+</regex>
+
+
+
+  <regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist2.param3][/COLOR]--[COLOR red]ver aqui  [/COLOR]</title>
+<urlsolve>[makelist1.param2]</urlsolve>
+<thumbnail>[makelist2.param13]</thumbnail>
+<fanart>[makelist2.param13]</fanart>
+]]></listrepeat>
+<expres>height="([^"<]+).*?src="([^"<]+).*?</expres>
+<page>[makelist2.param2]</page>
+</regex>
+
+ </item>
+
+
+<thumbnail>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</thumbnail>
+<fanart>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</fanart>
+ 
+ 
+ 
+ </item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item>
+ 
+<title>[COLOR aquamarine]CHOPO[/COLOR] [COLOR orange]SERIES[/COLOR] [COLOR lime]*[/COLOR][COLOR fuchsia]NOVEDAD[/COLOR][COLOR lime]*[/COLOR] </title>
+  <link>$doregex[makelist4]</link>
+ 
+
+
+
+  <regex>
+<name>makelist4</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow][makelist4.param1]-[/COLOR][COLOR white] pagina [/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail>https://www.inkapelis.com/wp-content/uploads/2016/07/11188189_681516281954468_6867444584986258414_n.png</thumbnail>
+<fanart>https://www.inkapelis.com/wp-content/uploads/2016/07/11188189_681516281954468_6867444584986258414_n.png</fanart>
+]]></listrepeat>
+<expres>pagina "([^"]+)".*?</expres>
+<page>https://pastebin.com/raw/uaBq2Ucm</page>
+</regex>
+
+
+
+
+ <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist2.param3][/COLOR]</title>
+<link>$doregex[makelist1]</link>
+<thumbnail>[makelist2.param6]</thumbnail>
+<fanart>[makelist2.param6]</fanart>
+]]></listrepeat>
+<expres>(?s)h2>([<^"]+).*?a href="([^"]+).*?">([^<"]+).*?|src="([^"]+).*?</expres>
+<page>https://www.seriesgato.net/genero/Documental/p[makelist4.param1]</page>
+</regex>
+article class="TPost.*?C">([^a']+).*?a href="([^"']+).*?([^"']+).*?
+
+
+ 
+ <regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist1.param4][/COLOR]</title>
+<link>$doregex[makelist1]</link>
+<thumbnail>[makelist1.param1]</thumbnail>
+<fanart>[makelist1.param1]</fanart>
+]]></listrepeat>
+<expres>(?s)class="MvTbTtl"([^"a]+).*?a href="([^"']+).*?([^"t]+).*?tulo([^"<']+).*?</expres>
+<page>[makelist2.param2]</page>
+</regex>
+ 
+
+
+ 
+ 
+ 
+<thumbnail>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</thumbnail>
+<fanart>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</fanart>
+ 
+ 
+ 
+ </item>
+
+
+<item>
+ 
+<title>[COLOR aquamarine]CHOPO[/COLOR] [COLOR orange]SERIES[/COLOR] [COLOR lime]*[/COLOR][COLOR fuchsia]NOVEDAD[/COLOR][COLOR lime]*[/COLOR] </title>
+  <link>$doregex[makelist2]</link>
+ 
+ 
+ 
+  regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist1.param2][/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail>[makelist1.param3]</thumbnail>
+<fanart>[makelist1.param3]</fanart>
+]]></listrepeat>
+<expres>(?s)dir='([^'"]+).*?href="([^'"]+).*?</expres>
+<page>https://seriesblanco.com/listado/</page>
+</regex>
+ 
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR lime][makelist2.param3][/COLOR]</title>
+<link>$doregex[makelist3]</link>
+<thumbnail>[makelist2.param2]</thumbnail>
+<fanart>[makelist2.param4]</fanart>
+]]></listrepeat>
+<expres>data-placement='([^"']+).*?src='([^"']+).*?title='([^"']+).*?height='184' width='140'>([^'"]+).*?text-align:center;line-height:20px;height:20px;'([^'"]+)...([^'"]+).*?</expres>
+<page>https://seriesblanco.com/listado/</page>
+</regex>
+
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist3.param1][/COLOR]]</title>
+<link>$doregex[makelist4]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>https://seriesblanco.com/serie/.*?</expres>
+<page>[makelist2.param6]</page>
+</regex>
+ 
+
+  <regex>
+<name>makelist4</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist4.param3][/COLOR]]</title>
+<link>$doregex[makelist4]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>(?s)table-hover'([^"<]+).*?a href='([^"']+).*?span>([^"<]+).*?</expres>
+<page>[makelist2.param6][makelist3.param1]</page>
+</regex>
+ 
+ 
+ 
+<thumbnail>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</thumbnail>
+<fanart>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</fanart>
+ 
+ 
+ 
+ </item>
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+
+
+------------------------------------------------------
+
+
+
+
+
+
+
+
+<item>
+ 
+<title>[COLOR aquamarine]CHOPO[/COLOR] [COLOR orange]SERIES[/COLOR] [COLOR lime]*[/COLOR][COLOR fuchsia]NOVEDAD[/COLOR][COLOR lime]*[/COLOR] </title>
+  <link>$doregex[makelist1]</link>
+ 
+ 
+ 
+  <regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR orange][makelist1.param4][/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail>[makelist1.param3]</thumbnail>
+<fanart>[makelist1.param3]</fanart>
+]]></listrepeat>
+<expres>(?s)class="poster"([^h]+).*?href="([^"]+).*?src="([^"]+).*?alt="([^"]+).*?</expres>
+<page>https://pastebin.com/raw/7fii5JqZ</page>
+</regex>
+ 
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR red][makelist2.param2]--[/COLOR][COLOR yellow]tvchopo[/COLOR]</title>
+<link>$doregex[makelist3]</link>
+<thumbnail>[makelist1.param3]</thumbnail>
+<fanart>[makelist1.param3]</fanart>
+]]></listrepeat>
+<expres>a href="([^"]+).*?title="([^"]+).*?src="([^"]+).*?title="([^"]+).*?</expres>
+<page>[makelist1.param2]</page>
+</regex>
+ 
+ 
+ 
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR blue][makelist3.param2]-[COLOR yellow]-[makelist3.param5][/COLOR]
+</title>
+<urlsolve>[makelist3.param1]</urlsolve>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>(?s)domain=([^"]+).*?title="([^"]+).*?style=".*?><([^"<]+).*?td([^"<]+).*?td>([^"<]+).*?</expres>
+<page>[makelist2.param1]</page>
+</regex>
+ 
+ 
+ 
+ 
+ 
+<thumbnail>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</thumbnail>
+<fanart>https://superrepo.org/static/images/icons/original/xplugin.video.mdwatchtvseries.png.pagespeed.ic.WmKEJkINUF.png</fanart>
+ 
+ 
+ 
+ </item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item>
+ 
+<title>[COLOR aquamarine]hghE[/COLOR] [COLOR yellow]INFANTIL[/COLOR]</title>
+  <link>$doregex[makelist1]</link>
+ 
+ 
+ 
+  <regex>
+<name>makelist1</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR lime][makelist1.param2][/COLOR]</title>
+<link>$doregex[makelist2]</link>
+<thumbnail>[makelist2.param3]</thumbnail>
+<fanart>[makelist2.param3]</fanart>
+]]></listrepeat>
+<expres>href=\"([^\"]+).*?title=\"([^\"]+).*?src=\"([^\"]+).*?</expres>
+<page>https://pastebin.com/raw/7fii5JqZ</page>
+</regex>
+ 
+ 
+  <regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR red][makelist2.param2]-[/COLOR][COLOR yellow][makelist2.param4][/COLOR]</title>
+<link>$doregex[makelist3]</link>
+<thumbnail>[makelist2.param3]</thumbnail>
+<fanart>[makelist2.param3]</fanart>
+]]></listrepeat>
+<expres>a href="([^"]+).*?title="([^"]+).*?src="([^"]+).*?title="([^"]+).*?</expres>
+<page>[makelist1.param1]</page>
+</regex>
+ 
+ 
+ 
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR pink][makelist3.param1][/COLOR]</title>
+<urlsolve>[makelist3.param1]</urlsolve>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>href="([^"]+).*?</expres>
+<page>[makelist2.param1]</page>
+</regex>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </item>
+ 
+ </item>
+
+<item>
+ 
+<title>[COLOR aquamarine]CINE[/COLOR] [COLOR yellow]INFANTIL[/COLOR]</title>
+  <link>$doregex[makelist3]</link>
+
+
+
+  <regex>
+<name>makelist3</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR white][makelist3.param3][/COLOR]</title>
+<link>$doregex[makelist5]</link>
+<thumbnail>[makelist3.param2]</thumbnail>
+<fanart>[makelist3.param2]</fanart>
+]]></listrepeat>
+<expres>a class="visco".*?href="([^"]+).*?img src="([^"]+).*?>&nbsp;([^"<]+).*?</expres>
+<page>http://www.seriespapaya.com/serie/ven-a-cenar-conmigo.html</page>
+</regex>
+
+
+  <regex>
+<name>makelist5</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR white][makelist5.param2][/COLOR]</title>
+<link>$doregex[makelist4]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>class="denlace"([^"<]+).*?href="([^"]+).*?</expres>
+<page>http://www.seriespapaya.com/[makelist3.param1]</page>
+</regex>
+
+
+ <regex>
+<name>makelist4</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR red][makelist4.param1][/COLOR]</title>
+<link>$doregex[makelist]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>href='([^"]+).*?</expres>
+<page>[makelist5.param2]</page>
+</regex>
+
+
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<SetwatchMode>55</SetwatchMode>
+<title>[COLOR yellow]*[/COLOR][COLOR lime] [makelist6.param1][/COLOR] | [COLOR yellow][makelist.param1][/COLOR]</title>
+<link>$doregex[id3]</link>
+<thumbnail></thumbnail>
+<fanart></fanart>
+]]></listrepeat>
+<expres>"(http://gamovideo.*?|https://powvideo.*?|https://streamango.*?https://streamcloud.*?)"</expres>
+<page>[makelist4.param1]</page>
+<referer></referer>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+ 
+<regex>
+<name>id3</name>
+<expres><![CDATA[#$pyFunction
+def GetLSProData(page_data,Cookie_Jar,m):
+   import urlresolver
+   url = '[makelist.param1]'
+   try:
+       u = urlresolver.resolve(url)
+   except:
+       u = 'http://picapau.org/error.mp4'
+   return u
+]]></expres>
+<page></page>
+</regex>
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<channels>
+
+<channels_info>
+  <title>Pruaddons</title>
+  <description>Lista privada de addons con base LSP</description>
+  <thumbnail>https://s1.postimg.org/2n27ynorz3/kodiaddons.jpg</thumbnail>
+  <fanart>https://s1.postimg.org/10kqrjy2gf/fanart-197_orig.jpg</fanart>
+</channels_info>
+
+<channel>
+  <name>ADRYANLIST</name>
+  <thumbnail>https://raw.githubusercontent.com/adrianhn/adryanlist/master/adryan/img/adryanlist.png</thumbnail>
+  <fanart>https://raw.githubusercontent.com/adrianhn/adryanlist/master/adryan/img/fanart.jpg</fanart>
+  <externallink>https://raw.githubusercontent.com/adrianhn/adryanlist/master/list.xml</externallink>
+  <info>Autor: Adryan (Mexico). Addon de adrian todo en uno</info>
+</channel>
+
+<channel>
+  <name>DIABLO</name>
+  <thumbnail>http://www.fdileague.com/images/EB/logo.png</thumbnail>
+  <fanart>https://wowcenter.pl/Upload/Avatars/7369.jpg</fanart>
+  <externallink>https://raw.githubusercontent.com/lokiyotnt69/UFC/master/undertaker.xml</externallink>
+  <info>Autor: Juan (España). Otros addons: JHG y JOKER</info>
+</channel>
+
+<channel>
+  <name>DJLIPTV</name>
+  <thumbnail>http://i.imgur.com/xFd7eOc.jpg</thumbnail>
+  <fanart>http://i.imgur.com/xFd7eOc.jpg</fanart>
+  <externallink>http://bit.ly/DJLIPTVP</externallink>
+  <info>Autor: Diego (Argentina). Addon incluido en EL RINCON DEL LOLO</info>
+</channel>
+
+<channel>
+  <name>DOCUMANIATV</name>
+  <thumbnail>https://www.documaniatv.com/uploads/xcustom-logo.png.pagespeed.ic.K4J_r8TUgr.png</thumbnail>
+  <fanart>https://i.ytimg.com/vi/8knT8bc2hGw/maxresdefault.jpg</fanart>
+  <externallink>https://pastebin.com/raw/BexPJbec</externallink>
+  <info>Regex DocumaniaTv by joheos11</info>
+</channel>
+
+<channel>
+  <name>EL RINCON DEL LOLO</name>
+  <thumbnail>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/icon.png?raw=true</thumbnail>
+  <fanart>https://github.com/djliptv/ElRinconDelLolo/blob/master/Pics/fanart.jpg?raw=true</fanart>
+  <externallink>https://raw.githubusercontent.com/djliptv/ElRinconDelLolo/master/Menu/Baselolo.xml</externallink>
+  <info>Autor: Manuel (España). Colabora junto a Diego de DJLIPTV</info>
+</channel>
+
+<channel>
+  <name>JHG.MASTER.3.0</name>
+  <thumbnail>https://github.com/lokiyotnt69/REPOSITORIOJHGMASTER/blob/master/plugin.video.J.H.G.MASTER/icon.png?raw=true</thumbnail>
+  <fanart>https://github.com/lokiyotnt69/REPOSITORIOJHGMASTER/blob/master/plugin.video.J.H.G.MASTER/fanart.jpg?raw=true</fanart>
+  <externallink>https://raw.githubusercontent.com/lokiyotnt69/JHG.MASTER.3.0/master/BASEJUANH.xml</externallink>
+  <info>Autor: Juan (España). Otros addons: JOKER y DIABLO</info>
+</channel>
+
+<channel>
+  <name>JUNIOR</name>
+  <thumbnail>https://s1.postimg.org/4uic4zxn57/icon.png</thumbnail>
+  <fanart>https://s1.postimg.org/51lk0fj5ff/fanart.jpg</fanart>
+  <externallink>https://dl.dropbox.com/s/2xvpr4fh4s9b4fe/principal.xml</externallink>
+  <info>Autor: Neoandaluz</info>
+</channel>
+
+<channel>
+  <name>KARAOKE</name>
+  <thumbnail>https://s26.postimg.org/5sqzqjqxx/icon.png</thumbnail>
+  <fanart>https://s26.postimg.org/i63txggmd/fanart.jpg</fanart>
+  <externallink>https://raw.githubusercontent.com/Compartida/Karaoke/master/adiosindex.xml</externallink>
+  <info>Autor: Boni AKA ESTEST (España). Otros addons: PLANETA</info>
+</channel>
+
+<channel>
+  <name>KODISPAINTV</name>
+  <thumbnail>https://github.com/joheos11/repository.kodispain/blob/master/plugin.video.kodispaintv/icon.png?raw=true</thumbnail>
+  <fanart>https://github.com/joheos11/repository.kodispain/blob/master/plugin.video.kodispaintv/fanart.jpg?raw=true</fanart>
+  <externallink>https://raw.githubusercontent.com/joheos11/hello-world/master/Nueva%20carpeta/master.xml</externallink>
+  <info>Autor: @joheos11 Otros: Imagen @kodispain</info>
+</channel>
+
+<channel>
+  <name>LFP</name>
+  <thumbnail>https://s26.postimg.org/8pv3yr0h5/icon.png</thumbnail>
+  <fanart>http://www.gamingesports.com/wp-content/uploads/2016/07/maxresdefault-4.jpg</fanart>
+  <externallink>https://pastebin.com/raw/Jvw2GNxY</externallink>
+  <info></info>
+</channel>
+
+<channel>
+  <name>LISTAS M3U</name>
+  <thumbnail>https://s1.postimg.org/4q5v8jo5z3/m3u-icon.png</thumbnail>
+  <fanart>https://s1.postimg.org/6w3vb4bs8v/m3u_fanart.jpg</fanart>
+  <externallink>https://pastebin.com/raw/430jrTFa</externallink>
+  <info>Listas variadas de m3u</info>
+</channel>
+
+<channel>
+  <name>PELICULAS</name>
+  <externallink>https://pastebin.com/raw/mkMb5yB7</externallink>
+  <thumbnail>https://s20.postimg.org/ftpios9x9/boton_peliculas.png</thumbnail>
+  <fanart>https://s33.postimg.org/bfdhwtvgv/peliculas-2016.jpg</fanart>
+</channel>
+
+<channel>
+  <name>PLANETA</name>
+  <thumbnail>https://s26.postimg.org/v6fktw36t/icon.png</thumbnail>
+  <fanart>https://s26.postimg.org/wk77p72g5/fanart.jpg</fanart>
+  <externallink>https://raw.githubusercontent.com/Maniac2017/Planeta/master/planeta.xml</externallink>
+  <!-- <externallink>https://raw.githubusercontent.com/Compartida/documentales/master/index.xml</externallink> -->
+  <info>Autor: Antes Catoal, Nereo y ESTEST, luego solo Catoal y Nereo (España). Otros addons: KARAOKE (ESTEST)</info>
+</channel>
+
+<channel>
+  <name>PURO HD</name>
+  <thumbnail>https://s33.postimg.org/qe2caenx7/icon.png</thumbnail>
+  <fanart>https://s33.postimg.org/sve3ho03v/fanart.jpg</fanart>
+  <externallink>http://178.33.205.93/puro-hd/index.xml</externallink>
+  <info></info>
+</channel>
+
+<channel>
+  <name>TV CHOPO</name>
+  <thumbnail>http://4.bp.blogspot.com/-Ts6yfxXmc6w/WcfzE6JX4xI/AAAAAAAAEgA/GssOAZyPARg6dc5zRKfFuWc0XwxY_2lQACK4BGAYYCw/s1600/photo_2017-09-24_18-36u.png</thumbnail>
+  <fanart>https://s26.postimg.org/s0h6yggf9/fanart.jpg</fanart>
+  <externallink>https://raw.githubusercontent.com/elchocolate/tvchocotv/master/new%201.xml</externallink>
+  <info>Autor: Torete. Addon AKA TV CHOCO </info>
+</channel>
+
+<channel>
+  <name>Wet4U</name>
+  <thumbnail>https://github.com/Maniac2017/repository.Maniac/blob/master/plugin.video.wet4u/icon.png?raw=true</thumbnail>
+  <fanart>https://github.com/Maniac2017/repository.Maniac/blob/master/plugin.video.wet4u/fanart.jpg?raw=true</fanart>
+  <externallink>https://raw.githubusercontent.com/poluxw4u/Wet4u/master/Index.xml</externallink>
+  <info>Autor: Polux AKA Anabel </info>
+</channel>
+
+<channel>
+  <name>YO AMO A JESUS</name>
+  <thumbnail>https://2.bp.blogspot.com/-yrhVrphh2dc/WMb_s-uXv8I/AAAAAAAAAB4/Gv8m6GJRLzMYlOErDPtb7YbwfCQi9pwgQCLcB/s1600/icono.png</thumbnail>
+  <fanart>https://1.bp.blogspot.com/-m4E6A6Akh4E/WVGNgyA3LSI/AAAAAAAAA6o/AJNd3vtFX14aZDnwZWYzacglzXKECn8bwCLcBGAs/s1600/FONDO%2Byo%2Bammo%2Ba%2Bjesus.jpg</fanart>
+  <externallink>http://qbahumor.blogspot.com.es/p/addon-yo-amo-jesus.html</externallink>
+  <info>Addon religioso para Pachy y Cia</info>
+</channel>
+
+</channels>
