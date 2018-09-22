@@ -1,4 +1,12 @@
-  <item>
+ <item>
+<title>[COLOR gold]Gran Hermano[/COLOR]          [COLOR yellow]necesitas sportsdevil[/COLOR]          [COLOR gold]esperar un poco[/COLOR]</title>
+<sportsdevil>http://lacalleochotv.org/gran-hermano-online-en-directo-gratis/</sportsdevil>
+<referer>http://lacalleochotv.org/</referer>
+<thumbnail></thumbnail>
+<fanart></fanart>
+</item>
+
+ <item>
 <title>[B][COLOR blue] Terror[/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
