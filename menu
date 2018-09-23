@@ -55,7 +55,7 @@
 <link>$doregex[magyck2]</link>  
 ]]></listrepeat>
 <expres><![CDATA[href="./peli.php\?id=(.*?)".*?src="(.*?)".*?inline;">(\d..).*?class="title">(.*?)<]]></expres>
-<page>http://www.wopelis.com/?gener=Comedia</page>
+<page>http://www.wopelis.com/?gener=Suspense</page>
 <cookieJar></cookieJar>
 </regex>
  
@@ -149,15 +149,9 @@
 <urlsolve>[magyck2.param1]</urlsolve>  
 ]]></listrepeat>
 <expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
-<page>http://pelisplus.co/[magyck.param1]</page>
+<page>http://pelisplus.co/pelicula/la-monja/[magyck.param1]</page>
 <cookieJar></cookieJar>
 </regex>
- 
-<thumbnail>http://img1.downloadapk.net/1/6a/34fd23_0.png</thumbnail>
-</item>
-
-
-
 
 
 
