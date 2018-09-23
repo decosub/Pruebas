@@ -1,4 +1,32 @@
- <item>
+  <item>
+<title>[B][COLOR black] La Monja [/COLOR][/B]</title>
+ <link>$doregex[makelist]</link>
+ 
+ <regex>
+<name>makelist</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold][makelist.param3][/COLOR] [/B]</title>
+<thumbnail>[makelist.param2]</thumbnail>
+<title>[B][COLOR gold][makelist2.param2][/COLOR][/B]</title>
+<thumbnail>[makelist2.param3]</thumbnail>
+<fanart></fanart>
+<link>$doregex[makelist2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
+<page> http://pelisplus.co/pelicula/la-monja/p002/</page>
+<cookieJar></cookieJar>
+</regex>
+ </item>
+
+
+
+
+
+
+
+
+
+<item>
 <title>[COLOR gold]Gran Hermano[/COLOR]          [COLOR yellow]necesitas sportsdevil[/COLOR]          [COLOR gold]esperar un poco[/COLOR]</title>
 <sportsdevil>http://lacalleochotv.org/gran-hermano-online-en-directo-gratis/</sportsdevil>
 <referer>http://lacalleochotv.org/</referer>
@@ -60,7 +88,11 @@
 <page>http://pelisplus.co/genero/terror/</page>
 <cookieJar></cookieJar>
 </regex>
+ </item>
  
+ http://pelisplus.co/pelicula/la-monja/p002/
+ 
+ <item>
  
  <regex>
 <name>makelist2</name>  
@@ -77,10 +109,11 @@
 <page>http://seriesdanko.to/[makelist.param1]</page>
 <cookieJar></cookieJar>
 </regex>
- 
-<thumbnail></thumbnail>
-</item>
+ <thumbnail></thumbnail>
 </regex> 
+</item>
+
+
  <item>
 <title>[B][COLOR red] Por genero[/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
