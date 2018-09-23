@@ -88,12 +88,7 @@
 <page>http://pelisplus.co/genero/terror/</page>
 <cookieJar></cookieJar>
 </regex>
- </item>
- 
- http://pelisplus.co/pelicula/la-monja/p002/
- 
- <item>
- 
+
  <regex>
 <name>makelist2</name>  
 <listrepeat><![CDATA[  
