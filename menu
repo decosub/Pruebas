@@ -1,4 +1,259 @@
-  <item>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ 
+ 
+<item>
+<title>[B][COLOR blue]  +   [/COLOR][/B][B][COLOR white] Wopelis[/COLOR][I][COLOR gold] - Infantiles[/I][/COLOR][/B]</title>
+ <link>$doregex[magyck]</link>
+ 
+<regex>
+<name>magyck</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR white][magyck.param4] - [COLOR gold] [[magyck.param3]][/COLOR][/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck2]</link>  
+]]></listrepeat>
+<expres><![CDATA[href="./peli.php\?id=(.*?)".*?src="(.*?)".*?inline;">(\d..).*?class="title">(.*?)<]]></expres>
+<page>http://www.wopelis.com/?gener=terror</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+<regex>
+<name>magyck2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR greenyellow][magyck2.param1][/COLOR][/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<urlsolve>[magyck2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[name="url" value="(.*?)"]]></expres>
+<page>http://www.wopelis.com/venlaces.php?npl=[magyck.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail>http://www.wopelis.com/images/logo.png</thumbnail>
+</item>
+
+
+
+
+
+
+
+
+<item>
+<title>[B][COLOR blue]  +   [/COLOR][/B][B][COLOR white] Wopelis[/COLOR][I][COLOR gold] - Comedia[/I][/COLOR][/B]</title>
+ <link>$doregex[magyck]</link>
+ 
+<regex>
+<name>magyck</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR white][magyck.param4] - [COLOR gold] [[magyck.param3]][/COLOR][/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck2]</link>  
+]]></listrepeat>
+<expres><![CDATA[href="./peli.php\?id=(.*?)".*?src="(.*?)".*?inline;">(\d..).*?class="title">(.*?)<]]></expres>
+<page>http://www.wopelis.com/?gener=Comedia</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+<regex>
+<name>magyck2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR greenyellow][magyck2.param1][/COLOR][/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<urlsolve>[magyck2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[name="url" value="(.*?)"]]></expres>
+<page>http://www.wopelis.com/venlaces.php?npl=[magyck.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail>http://www.wopelis.com/images/logo.png</thumbnail>
+</item>
+
+
+
+
+
+
+
+
+
+
+
+
+<item>
+<title>[B][COLOR green]  +   [COLOR white] Pelisplus [/COLOR][I][COLOR gold] - Estrenos y más [/I][/COLOR][/B]</title>
+ <link>$doregex[magyck]</link>
+ 
+ <regex>
+<name>magyck</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold][magyck.param3][/COLOR] [/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
+<page>http://pelisplus.co/genero/terror/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+ <regex>
+<name>magyck2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] [magyck2.param4] -[COLOR yellow] [magyck2.param3] - [COLOR gold][magyck2.param2][/COLOR] [/B]</title>
+<thumbnail>[magyck2.param5]</thumbnail>
+<fanart></fanart>
+<urlsolve>[magyck2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
+<page>http://pelisplus.co/[magyck.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail>http://img1.downloadapk.net/1/6a/34fd23_0.png</thumbnail>
+</item>
+
+
+<item>
+<title>[B][COLOR green]  +   [COLOR white] la monja [/COLOR][I][COLOR gold] - prueba [/I][/COLOR][/B]</title>
+ <link>$doregex[magyck]</link>
+ 
+ <regex>
+<name>magyck</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold][magyck.param3][/COLOR] [/B]</title>
+<thumbnail>[magyck.param2]</thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a href="(.+?)"[^"]+.*?data-src="(.*?)" alt=""></figure>[^"]+<p>(.*?)</(.+?)]]></expres>
+<page>http://pelisplus.co/pelicula/la-monja/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+ <regex>
+<name>magyck2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] [magyck2.param4] -[COLOR yellow] [magyck2.param3] - [COLOR gold][magyck2.param2][/COLOR] [/B]</title>
+<thumbnail>[magyck2.param5]</thumbnail>
+<fanart></fanart>
+<urlsolve>[magyck2.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[data-source="(.*?)"[^"]+.*data-quality="(.*?)"[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*[^"]+.*class="title">(.*?)<.*[^"]+.*<span>(.*?)<.*[^"]+<img src="(.*?)".*]]></expres>
+<page>http://pelisplus.co/[magyck.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail>http://img1.downloadapk.net/1/6a/34fd23_0.png</thumbnail>
+</item>
+
+
+
+
+
+
+
+
+
+<item>
+<title>[B][COLOR deeppink]  +   [/COLOR][/B][B][COLOR white] Inkapelis[/COLOR][I][COLOR gold] - Por genero[/COLOR][/I][/B]</title>
+ <link>$doregex[magyck]</link>
+ 
+<regex>
+<name>magyck</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR silver][magyck.param2] [/COLOR][/B]</title>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck2]</link>  
+]]></listrepeat>
+<expres><![CDATA[<a https://www.inkapelis.com/genero/terror/(.*?)".*?>(.*?) <]]></expres>
+<page>https://www.inkapelis.com/</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+ 
+<regex>
+<name>magyck2</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR silver][magyck2.param2][/COLOR][/B]</title>
+<thumbnail>[magyck2.param1]</thumbnail>
+<fanart></fanart>
+<link>$doregex[magyck3]</link>  
+]]></listrepeat>
+<expres><![CDATA[src="(.*?)" title="(.*?)".*?href="https://www.inkapelis.com/(.*?)"]]></expres>
+<page>https://www.inkapelis.com/genero/[magyck.param1]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<regex>
+<name>magyck3</name>  
+<listrepeat><![CDATA[  
+<title>[B][COLOR gold] - [COLOR yellow][magyck3.param2] - [COLOR gold][magyck3.param3] - [COLOR yellow][magyck3.param4][/COLOR][/B]</title>
+<thumbnail></thumbnail>
+<fanart></fanart>
+<urlsolve>[magyck3.param1]</urlsolve>  
+]]></listrepeat>
+<expres><![CDATA[<td><a href="(.*?)".*?</span>(.*?)<.*?title="(.*?)".*?<td>(.*?)</td><td>(.*?)<]]></expres>
+<page>https://www.inkapelis.com/[magyck2.param3]</page>
+<cookieJar></cookieJar>
+</regex>
+ 
+<thumbnail>https://2.bp.blogspot.com/-aIsX8PhrV1A/WoHKASoTMSI/AAAAAAAAABI/3GmPT5v3v0s4O1SKniuD1BX9sXudQKavACLcBGAs/s1600/inkapelis.jpg</thumbnail>
+</item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<item>
 <title>[B][COLOR black] La Monja [/COLOR][/B]</title>
  <link>$doregex[makelist]</link>
  
